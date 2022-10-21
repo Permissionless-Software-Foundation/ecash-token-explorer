@@ -1,13 +1,13 @@
-# slp-token-explorer
+# ecash-token-explorer
 
-This is a single page app (SPA) build on top of React. It's a 'block explorer' for SLP tokens on the Bitcoin Cash blockchain.
+This is a single page app (SPA) build on top of React. It's a 'block explorer' for (SLP) eTokens on the eCash (XEC) blockchain.
 
-This repository is forked from [react-boostrap-web3-spa](https://github.com/Permissionless-Software-Foundation/react-bootstrap-web3-spa) boilerplate.
+This repository is forked from [slp-token-explorer](https://github.com/Permissionless-Software-Foundation/slp-token-explorer) boilerplate, which provides the save explorer functionality for SLP tokens on the Bitcoin Cash (BCH) blockchain.
 
 ## Installation
 ```bash
-git clone https://github.com/Permissionless-Software-Foundation/slp-token-explorer
-cd slp-token-explorer
+git clone https://github.com/Permissionless-Software-Foundation/ecash-token-explorer
+cd ecash-token-explorer
 npm install
 npm start
 npm run build
