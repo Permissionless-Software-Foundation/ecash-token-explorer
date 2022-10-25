@@ -17,14 +17,12 @@ import NavMenu from './components/nav-menu'
 import AppBody from './components/app-body'
 
 // Default restURL for a back-end server.
-let serverUrl = 'https://free-bch.fullstack.cash'
+// let serverUrl = 'https://wa-usa-xec-consumer.fullstackcash.nl'
+let serverUrl = 'https://wa-usa-xec-consumer.fullstackcash.nl'
 
 // Default alternative servers.
 const defaultServerOptions = [
-  { value: 'https://free-bch.fullstack.cash', label: 'https://free-bch.fullstack.cash' },
-  { value: 'https://bc01-ca-bch-consumer.fullstackcash.nl', label: 'https://bc01-ca-bch-consumer.fullstackcash.nl' },
-  { value: 'https://pdx01-usa-bch-consumer.fullstackcash.nl', label: 'https://pdx01-usa-bch-consumer.fullstackcash.nl' },
-  { value: 'https://wa-usa-bch-consumer.fullstackcash.nl', label: 'https://wa-usa-bch-consumer.fullstackcash.nl' }
+  { value: 'https://wa-usa-xec-consumer.fullstackcash.nl', label: 'https://wa-usa-xec-consumer.fullstackcash.nl' }
 ]
 
 let _this
@@ -58,7 +56,7 @@ class App extends React.Component {
 
   async componentDidMount () {
     try {
-      this.addToModal('Loading minimal-slp-wallet')
+      this.addToModal('Loading minimal-ecash-wallet')
 
       this.setState({
         denyClose: true

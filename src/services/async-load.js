@@ -17,8 +17,8 @@ class AsyncLoad {
   // attached to the global 'window' object.
   async loadWalletLib () {
     do {
-      if (typeof window !== 'undefined' && window.SlpWallet) {
-        this.BchWallet = window.SlpWallet
+      if (typeof window !== 'undefined' && window.XecWallet) {
+        this.BchWallet = window.XecWallet
 
         return this.BchWallet
       } else {
