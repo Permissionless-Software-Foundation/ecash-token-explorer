@@ -18,7 +18,7 @@ import AppBody from './components/app-body'
 
 // Default restURL for a back-end server.
 // let serverUrl = 'https://wa-usa-xec-consumer.fullstackcash.nl'
-let serverUrl = 'https://wa-usa-xec-consumer.fullstackcash.nl'
+let serverUrl = 'https://xec-consumer-or1-usa.fullstackcash.nl'
 
 // Default alternative servers.
 const defaultServerOptions = [
