@@ -19,6 +19,7 @@ import AppBody from './components/app-body'
 // Default restURL for a back-end server.
 // let serverUrl = 'https://wa-usa-xec-consumer.fullstackcash.nl'
 let serverUrl = 'https://xec-consumer-or1-usa.fullstackcash.nl'
+// const _tokenId = ''
 
 // Default alternative servers.
 const defaultServerOptions = [
@@ -39,6 +40,7 @@ class App extends React.Component {
       menuState: 0, // The current View being displayed in the app
       serverUrl, // Stores the URL for the currently selected server.
       servers: defaultServerOptions, // A list of back end servers.
+      tokenId: '',
 
       // Startup Modal
       showStartModal: true, // Should the startup modal be visible?
@@ -97,6 +99,14 @@ class App extends React.Component {
         asyncInitSucceeded: false,
         denyClose: false
       })
+
+      // setTimeout(function () {
+      //   if (_tokenId) {
+      //     _this.setState({
+      //       tokenId: _tokenId
+      //     })
+      //   }
+      // }, 2000)
     }
   }
 
@@ -109,7 +119,8 @@ class App extends React.Component {
     // all the data and handlers used throughout the app.
     const appData = {
       servers: this.state.servers, // Alternative back end servers
-      wallet: this.state.wallet
+      wallet: this.state.wallet,
+      tokenId: this.state.tokenId
     }
 
     return (
@@ -198,31 +209,24 @@ function InitializedView (props) {
 // Get the restURL query parameter.
 function GetRestUrl (props) {
   const [restURL] = useQueryParam('restURL', StringParam)
-  const [view] = useQueryParam('view', StringParam)
-  const [inputVal] = useQueryParam('inputVal', StringParam)
+  // const [view] = useQueryParam('view', StringParam)
+  // const [inputVal] = useQueryParam('inputVal', StringParam)
+  const [tokenId] = useQueryParam('tokenid', StringParam)
   // console.log('restURL: ', restURL)
+
+  if (tokenId) {
+    console.log('tokenId: ', tokenId)
+    // _this.setState({ tokenId })
+    // _tokenId = tokenId
+
+    if (!_this.state.tokenId) {
+      _this.setState({ tokenId })
+    }
+  }
 
   if (restURL) {
     serverUrl = restURL
     // queryParamExists = true
-  }
-
-  if (view) {
-    console.log(`view: ${view}`)
-
-    if (view.includes('token')) {
-      this.setState({ menuState: 0 })
-    } else if (view.includes('address')) {
-      this.setState({ menuState: 1 })
-    } else if (view.includes('transaction')) {
-      this.setState({ menuState: 2 })
-    }
-  }
-
-  // This input value will contain a TXID or an address. It should be put into
-  // the text box for the selected View and the button should be clicked.
-  if (inputVal) {
-    console.log('inputVal: ', inputVal)
   }
 
   return (<></>)
